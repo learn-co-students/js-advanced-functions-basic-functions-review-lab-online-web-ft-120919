@@ -35,8 +35,11 @@ function actionApplyer(startingInteger, arrayOfFunctions) {
     if (arrayOfFunctions = []){
         return startingInteger
     } else {
-        return startingInteger
+        total = startingInteger
+        for (let i = 0; i < arrayOfFunctions.length; i++){
+            total += arrayOfFunctions[i](total)
+            console.log(total)
+        }
+        return total
     }
-
-
 }

@@ -32,14 +32,17 @@ Calculator.divide = function(n, m) {
 }
 
 function actionApplyer(startingInteger, arrayOfFunctions) {
-    if (arrayOfFunctions = []){
+    // let total = startingInteger
+    let a = 0
+    if (arrayOfFunctions === []){
         return startingInteger
-    } else {
-        total = startingInteger
+    } else {        
+        let total = 0
         for (let i = 0; i < arrayOfFunctions.length; i++){
-            total += arrayOfFunctions[i](total)
-            console.log(total)
+            a = startingInteger
+            total += a 
+            console.log(a = arrayOfFunctions[i](total));   
         }
-        return total
+        return a
     }
 }

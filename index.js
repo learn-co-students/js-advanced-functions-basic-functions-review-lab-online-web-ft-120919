@@ -14,29 +14,34 @@ function wrapAdjective(af="*"){
     }
 }
 
-class Calculator {
-    static add(a, b){
+const Calculator = {
+    add: function(a, b){
         return a+b;
-    }
-    static subtract(a, b){
+    },
+    subtract: function (a, b){
         return a-b;
-    }
-    static multiply(a, b){
+    },
+    multiply: function(a, b){
         return a*b;
-    }
-    static divide(a, b){
+    },
+    divide: function(a, b){
         return a/b;
-    }
+    },
 }
 
 
 function actionApplyer(ntgr, rryFnctns ){
-    let rv;
-    rryFnctns.forEach( fnctn => {
-       // console.log(`rv: ${rv} ; fnctn : ${fnctn}`);
-        (!rv)? rv = fnctn(ntgr): rv = fnctn(rv);
-    });
-    let message = `${ntgr}, multiplied by 2, added to 1000 and then modulo 7 is ${rv}. Apply each function in the Array of functions on the given base (${ntgr}) OR on the result of the use of the previous function to get this result`;
 
-    return rv;
+    if (rryFnctns.length!=0){
+        let rv;
+        rryFnctns.forEach( fnctn => {
+            // console.log(`rv: ${rv} ; fnctn : ${fnctn}`);
+            (!rv)? rv = fnctn(ntgr): rv = fnctn(rv);
+        });
+        let message = `${ntgr}, multiplied by 2, added to 1000 and then modulo 7 is ${rv}. Apply each function in the Array of functions on the given base (${ntgr}) OR on the result of the use of the previous function to get this result`;
+
+        return rv;
+    } else {
+        return ntgr;
+    }
 }
